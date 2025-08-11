@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday 🎉</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+  }
+  .message-box {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    max-width: 400px;
+  }
+  h1 {
+    font-size: 2em;
+    color: #ff4d6d;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 1.2em;
+    color: #333;
+  }
+  .balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 70px;
+    background-color: red;
+    border-radius: 50% 50% 50% 50%;
+    animation: floatUp 6s ease-in infinite;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-120vh) scale(1.1); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+  <div class="message-box">
+    <h1>🎂 Happy Birthday Hazra! 🎂</h1>
+    <p>Hey, just wanted to wish you a super chill and happy birthday. Hope your day’s filled with good vibes, laughter, and all your favourite things. 🎈</p>
+  </div>
+  <script>
+    function createBalloon() {
+      const balloon = document.createElement('div');
+      balloon.classList.add('balloon');
+      const colors = ['#ff4d6d', '#ffb347', '#87ceeb', '#98fb98', '#dda0dd'];
+      balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      balloon.style.left = Math.random() * 100 + 'vw';
+      balloon.style.animationDuration = (4 + Math.random() * 3) + 's';
+      document.body.appendChild(balloon);
+      setTimeout(() => {
+        balloon.remove();
+      }, 7000);
+    }
+    setInterval(createBalloon, 500);
+  </script>
+</body>
+</html>
